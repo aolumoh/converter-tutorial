@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="Abdulmalik Olumoh">
+    <meta name="description" content="">
+    <meta name="keywords" content="html, css, web, web development, javascript">
+    <title>Converter</title>
+    <link rel="icon" href="../../Page Elements/assets/img/favicon.png" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=
+    Roboto+Flex:opsz@8..144&family=Roboto:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/mrspecht/cdn/reset.css">
+    <link rel="stylesheet" href="./assets/style/index.css" media="all">
+    <script src="./assets/script/app.js" defer></script>
+  </head>
+  <body>
+    <header>
+      <div class="container header flex space-between">
+        <h1><a href="#">Converter</a></h1>
+        <nav>
+          <ul class="flex">
+            <li><a href="#">Projects</a></li>
+            <li><a href="#">About me</a></li>
+            <li><a href="#">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+    <main>
+      <div class="container">
+        <section>
+          <h2>Temperature converter</h2>
+          <form class="flex">
+            <input type="text" name="one" class="num-one" placeholder="Enter Temperature">
+            <input type="button" class="convert" value="Convert">
+          </form>
+          <form class="flex">
+            <input type="radio" name="temp" id="fahrenheit">
+            <label for="fahrenheit">To Celsius</label>
+            <input type="radio" name="temp" id="celsius">
+            <label for="celsius">To Fahrenheit</label>
+          </form>
+          <div class="output">
+            <p></p>
+          </div>
+        </section>
+        <input type="button" class="light-mode" id="light-mode" value="Light mode">
+      </div>
+    </main>
+  </body>
+</html>
