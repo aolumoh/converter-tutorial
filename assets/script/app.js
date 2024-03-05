@@ -4,7 +4,12 @@ const form = document.querySelector('form');
 const numOne = document.querySelector('.num-one');
 const convertButton = document.querySelector('.convert');
 const output = document.querySelector('.output p');
-const lightMode = document.getElementById('light-mode');
+const lightMode = document.querySelector('.light-mode');
+const body = document.querySelector('body');
+const title = document.querySelector('h2');
+const unitText = document.querySelectorAll('label');
+const lightText = 'rgb(255, 255, 255';
+const darkText = 'rgb(0, 0, 0)';
 
 function isNumber(str) {
   if (str.length > 0 && !isNaN(str)) return true;
@@ -18,10 +23,6 @@ function convertTemp(temp, toCelsius = false){
     return((temp * 1.8) + 32);  //convert to F
   }
 }
-
-lightMode.addEventListener('click', function() {
-  body.style.backgroundColor = fff;
-})
 
 convertButton.addEventListener('click', function() {
   const temperature = numOne.value.trim();
@@ -45,8 +46,39 @@ convertButton.addEventListener('click', function() {
   }
 });
 
-console.log();
+// Color change
 
+lightMode.addEventListener('click', () => {
+  if(lightMode.value === 'Dark mode')
+    turnDark();
+  else if (lightMode.value === 'Light mode')
+    turnLight();
+});
 
-convertTemp(32);
-convertTemp(0, true);
+function turnLight(){
+  body.style.backgroundColor = 'rgb(240, 240, 240';
+  lightMode.value = 'Dark mode';
+  lightMode.style.backgroundColor = '#000';
+  lightMode.style.color = '#fff';
+  title.style.color = darkText;
+  unitText.forEach(label => {
+    label.style.color = darkText;
+  });
+  numOne.style.color = darkText;
+  numOne.style.borderColor = 'rgb(200, 200, 200)';
+  output.style.color = darkText;
+}
+
+function turnDark(){
+  body.style.backgroundColor = 'rgb(24, 23, 32)';
+  lightMode.value = 'Light mode';
+  lightMode.style.backgroundColor = '#fff';
+  lightMode.style.color = '#000';
+  title.style.color = lightText;
+  unitText.forEach(label => {
+    label.style.color = lightText;
+  });
+  numOne.style.color = lightText;
+  numOne.style.borderColor = '#ffffff0d';
+  output.style.color = lightText;
+}

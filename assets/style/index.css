@@ -46,13 +46,12 @@ h1 a, nav ul li a{
   color: #fff;
 }
 
-
-
 /*----------------------------*/
 /*        Main              */
 /*----------------------------*/
 body {
  background-color: var(--background-dark);
+ transition: all 0.25s ease-in-out;
  font-family: 'Roboto', 'Roboto Flex', 'Arial';
 }
 
@@ -109,7 +108,8 @@ input{
 input[type=text] {
   width: 100%;
   padding: 0 15px;
-  border: 1px solid rgb(255 255 255 / 0.05);
+  border: 1px solid #ffffff0d;
+  transition: all 0.25s ease-in-out;
   background-color: rgb(255 255 255 / 0.05);
   font-size: 18px;
 }
@@ -158,10 +158,15 @@ input[type=button].light-mode{
   font-size: 16px;
 }
 
+label {
+  transition: all 0.25s ease-in-out;
+}
+
 .light-mode {
   position: fixed;
   bottom: 50px;
   right: 50px;
   border-radius: 50px;
   font-size: 50px;
+  transition: color 0.25s ease-in-out;
 }
